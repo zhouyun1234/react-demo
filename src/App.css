@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 100px;
 }
 
 .App-logo {
@@ -30,4 +31,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button-group a {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  margin:auto;
+  border:1px solid #e5e5e5;
+}
+
+li.activeItem {
+  text-decoration: line-through;
+}
+.btn-show {
+  display: none;
+}
+.node:hover .btn-show{
+   display: inline-block;
 }
