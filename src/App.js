@@ -12,25 +12,22 @@ class App extends Component {
         this.state = {
             originList:[
                 {
-                    // index:0,
                     text: 'first',
                     checked: true
                 },
                 {
-                    // index:1,
                     text: 'second',
                     checked: false
                 },
                 {
-                    // index:2,
                     text: 'third',
                     checked: true
                 }
             ],
             list: [],
-            // buttonisOpen:none,
+            inputValue: '',
             reactId: 0,
-            inputValue: ''
+
         }
     }
 
@@ -100,7 +97,7 @@ class App extends Component {
 
     handleAll(){
         this.setState({
-            list: this.state.originList
+            list: this.state.originList,
         })
     }
 
@@ -111,7 +108,7 @@ class App extends Component {
             }
         })
         this.setState({
-            list: list
+            list: list,
         })
     }
 
@@ -122,11 +119,14 @@ class App extends Component {
             }
         })
         this.setState({
-            list: list
+            list: list,
         })
     }
 
     render() {
+        let btnStyle1 = {
+            borderWidth:this.state.defaultBorder?'1px':'0px'
+        }
         return (
             <div className="App">
 
@@ -147,7 +147,7 @@ class App extends Component {
                 {/*</header>*/}
 
                 <input value={this.state.inputValue} onChange={this.handleInputChange.bind(this)}/>
-                <button onClick={this.handleBtClick.bind(this)}>增加</button>
+                <button className="btn-add" onClick={this.handleBtClick.bind(this)}>添加</button>
 
                 <ul>
                     {
@@ -159,7 +159,7 @@ class App extends Component {
                                     <input name={index} type="checkbox" checked={item.checked}
                                            onChange={this.handleChange.bind(this)}/>
                                     {item.text}
-                                    <button className="btn-show" onClick={this.deleteDom.bind(this,index)}>X</button>
+                                    <a className="btn-del" onClick={this.deleteDom.bind(this,index)}>X</a>
 
                                     </li>
                             )
@@ -167,9 +167,9 @@ class App extends Component {
                     }
                 </ul>
                 <div className="button-group">
-                    <a type="button" onClick={this.handleAll.bind(this)} >全部</a>
-                    <a type="button" onClick={this.handleFinish.bind(this)}>已完成</a>
-                    <a type="button" onClick={this.handlePending.bind(this)}>未完成</a>
+                    <a onClick={this.handleAll.bind(this)} >全部</a>
+                    <a onClick={this.handleFinish.bind(this)}>已完成</a>
+                    <a onClick={this.handlePending.bind(this)}>未完成</a>
                 </div>
 
 

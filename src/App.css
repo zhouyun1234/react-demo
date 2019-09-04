@@ -35,19 +35,37 @@
 
 .button-group a {
   display: inline-block;
-  width: 100px;
+  width: 50px;
   height: 20px;
   text-align: center;
-  margin:auto;
+  margin:0 10px 0 0;
   border:1px solid #e5e5e5;
+  font-size: 14px;
 }
 
+
+li {
+  width: 180px;
+  height:30px;
+  line-height: 30px;
+  margin:auto;
+  list-style: none;
+  text-align: left;
+}
 li.activeItem {
   text-decoration: line-through;
 }
-.btn-show {
+.btn-del {
   display: none;
 }
-.node:hover .btn-show{
+.node:hover .btn-del{
    display: inline-block;
+  float: right;
+  margin-left: 30px;
+  color:#cc9a9a;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-add {
+  margin-left: 5px;
 }
